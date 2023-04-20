@@ -4,6 +4,7 @@
         <description>Jetty transparent proxy</description>
         <servlet-name>TransparentProxy</servlet-name>
         <servlet-class>org.eclipse.jetty.proxy.ProxyServlet</servlet-class>
+        <async-supported>true</async-supported>
         <init-param>
             <param-name>proxyTo</param-name>
             <param-value>https://www.google.com/</param-value>
