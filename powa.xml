@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_10_0.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+  <!-- Deploy the POWA monitoring system through a proxy -->
+
+  <Set name="contextPath">/powa</Set>
+  <Set name="war">/opt/webapps/proxyapp-1.0-SNAPSHOT.war</Set>
+  <Set name="overrideDescriptor">/opt/webconfig/proxyapp-override.xml</Set>
+
+</Configure>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0"
+	 xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+      <servlet-name>TransparentProxy</servlet-name>
+        <init-param>
+          <param-name>proxyTo</param-name>
+	  <!-- For use with POWA, run POWA as: -->
+	  <!-- powa-web  ++address=localhost ++url-prefix=/powa -->
+	  <!-- with the ++ turned to dash dash -->
+            <param-value>http://localhost:8888/powa</param-value>
+        </init-param>
+        <init-param>
+            <description>this is removed</description>
+            <param-name>prefix</param-name>
+            <param-value>/</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>TransparentProxy</servlet-name>
+      <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
