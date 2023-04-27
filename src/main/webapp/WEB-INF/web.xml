@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
     <servlet>
         <description>Jetty transparent proxy</description>
         <servlet-name>TransparentProxy</servlet-name>
-        <servlet-class>org.eclipse.jetty.proxy.ProxyServlet</servlet-class>
+        <servlet-class>org.eclipse.jetty.proxy.ProxyServlet$Transparent</servlet-class>
         <async-supported>true</async-supported>
         <init-param>
             <param-name>proxyTo</param-name>
-            <param-value>https://www.google.com/</param-value>
+            <param-value>http://localhost:8888/powa</param-value>
         </init-param>
-        <init-param>
+<!--        <init-param>
             <description>this is removed</description>
             <param-name>prefix</param-name>
             <param-value>/proxy</param-value>
-        </init-param>
+        </init-param>-->
     </servlet>
     <servlet-mapping>
         <servlet-name>TransparentProxy</servlet-name>
-        <url-pattern>/proxy/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
 </web-app>
